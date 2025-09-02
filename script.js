@@ -13,21 +13,25 @@ document.getElementById("kitty").addEventListener("click", () => {
     // Random position
     balloon.style.left = Math.random() * 100 + "vw";
 
-    // Different sizes
+    // Random size
     balloon.style.width = 40 + Math.random() * 40 + "px";
     balloon.style.height = 60 + Math.random() * 40 + "px";
 
-    // Add balloon
     document.getElementById("balloons").appendChild(balloon);
 
-    // Remove balloon after animation
+    // Remove after float
     setTimeout(() => {
       balloon.remove();
     }, 6000);
   }
 
-  // Show "Next Page" button AFTER balloons disappear
+  // Show Next button after balloons appear
   setTimeout(() => {
-    document.getElementById("next-btn").classList.remove("hidden");
-  }, 6000); // same time as balloon removal
+    document.getElementById("next-button").classList.remove("hidden");
+  }, 2000);
+});
+
+// When clicking next button → go to next page
+document.getElementById("next-button").addEventListener("click", () => {
+  window.location.href = "page2.html"; // create page2.html later
 });
