@@ -67,9 +67,14 @@ body {
   border-radius: 12px;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.3s ease;
 }
 
+.next-btn.show {
+  opacity: 1;
+  transform: scale(1);
+}
 .next-btn:hover {
   background: #ff4f70;
   transform: scale(1.1);
