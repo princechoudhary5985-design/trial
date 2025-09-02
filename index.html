@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome 💖</title>
+  <title>Kitty Birthday Page</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="welcome-container">
-    <h1>Hey Love ❤️</h1>
-    <p>Click the kitty to see something special!</p>
-    
+  <div class="container">
     <!-- Kitty Image -->
-    <img src="kitty.png" alt="Kitty" class="kitty" id="kitty">
+    <img src="kitty.jpg" alt="Kitty" id="kitty" class="kitty">
 
-    <!-- Hidden Birthday Message -->
-    <h2 id="birthday-message" class="hidden">🎉 Happy Birthday My Love 🎂❤️</h2>
+    <!-- Balloons container -->
+    <div class="balloon-container" id="balloonContainer">
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+    </div>
 
-    <!-- Balloon container -->
-    <div id="balloons"></div>
+    <!-- Hidden button -->
+    <button id="nextButton" style="display:none;">Next ➡️</button>
   </div>
- <!-- Next Button (Hidden at first) -->
-    <button id="nextButton">Next ➡️</button>
-  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
+
 
