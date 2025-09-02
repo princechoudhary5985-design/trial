@@ -24,5 +24,5 @@ document.getElementById("kitty").addEventListener("click", () => {
   // Show next button AFTER balloons are gone
   setTimeout(() => {
     nextBtn.classList.remove("hidden");
-  }, 6000);
+  }, 3000);
 });
