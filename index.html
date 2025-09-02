@@ -5,10 +5,12 @@
   <title>Birthday Surprise</title>
   <style>
     body {
-      <div class="welcome-container">
-    <h1>Hey Love ❤️</h1>
-    <p>Click the kitty to see something special!</p>
-      text-align: center;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       background: #ffe4ec;
       font-family: Arial, sans-serif;
       overflow: hidden;
@@ -16,7 +18,6 @@
 
     #kitty {
       width: 200px;
-      margin-top: 50px;
       cursor: pointer;
     }
 
@@ -62,9 +63,9 @@
   
   <div id="birthday-message">🎉 Happy Birthday My Love ❤️ 🎉</div>
   
-  <div id="balloons"></div>
-
   <button id="next-button" onclick="goNext()">Next Page ➡️</button>
+  
+  <div id="balloons"></div>
 
   <script>
     const kitty = document.getElementById("kitty");
