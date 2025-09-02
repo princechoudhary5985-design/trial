@@ -1,37 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Kitty Page → Balloons → Next</title>
-<style>
-  :root { --bg:#ffe6f0; }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; height: 100vh; display: flex; align-items: center; justify-content: center;
-    background: var(--bg); font-family: Arial, sans-serif; overflow: hidden;
-  }
-  /* Content sits above balloons */
-  .wrap { z-index: 2; position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
-  #kitty { width: 260px; cursor: pointer; transition: transform .2s; }
-  #kitty:hover { transform: scale(1.05); }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kitty Page → Balloons → Next</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <img id="kitty" src="kitty.png" alt="Kitty" />
+    <a id="nextBtn" class="btn" href="page2.html">Go to Next Surprise 💌</a>
+  </div>
+  <div id="balloonLayer"></div>
+  <script src="script.js" defer></script>
+</body>
+</html>
 
-  /* Button (hidden at start) */
-  .btn {
-    margin-top: 18px; padding: 12px 22px; font-size: 18px; border-radius: 12px; border: 0;
-    background: #ff6f91; color: #fff; text-decoration: none; display: inline-block;
-    opacity: 0; pointer-events: none; transform: translateY(6px);
-    transition: opacity .6s ease, transform .3s ease;
-  }
-  .btn.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
-
-  /* Balloon layer behind everything */
-  #balloonLayer {
-    position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 1;
-  }
-  .balloon {
-    position: absolute; bottom: -120px;
-    width: var(--w); height: var(--h); background: var(--clr);
-    border-radius: 50% 50% 45% 45%;
-    box-shadow: 0 8px 16px rgba(0,0,0,.2);
-    ani
