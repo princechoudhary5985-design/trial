@@ -1,71 +1,51 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background: #ffe6f0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
+  background: pink;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
 }
 
 .container {
   text-align: center;
+  position: relative;
 }
 
 .kitty {
-  width: 250px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  width: 300px;
+  z-index: 2;
 }
 
-.kitty:hover {
-  transform: scale(1.1);
+.balloon-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-/* Balloons */
 .balloon {
-  position: absolute;
-  bottom: 0;
   width: 50px;
   height: 70px;
-  border-radius: 50%;
-  background-color: pink;
-  animation: floatUp 4s linear forwards;
+  background: red;
+  border-radius: 50% 50% 50% 50%;
+  margin: 0 10px;
+  animation: float 4s ease-in-out forwards;
 }
 
-@keyframes floatUp {
-  from {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(-100vh);
-    opacity: 0;
-  }
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-300px); opacity: 0; }
 }
 
-/* Next Button */
-.next-btn {
-  display: none;
+#nextButton {
   margin-top: 20px;
-  padding: 12px 20px;
-  background: #ff6f91;
-  color: white;
+  padding: 12px 25px;
   font-size: 18px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: bold;
-  opacity: 0;
-  transition: opacity 0.8s ease, transform 0.3s ease;
-}
-
-.next-btn.show {
-  opacity: 1;
-  display: inline-block;
-}
-
-.next-btn:hover {
-  background: #ff4f70;
-  transform: scale(1.1);
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
