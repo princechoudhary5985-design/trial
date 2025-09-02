@@ -24,5 +24,13 @@ document.getElementById("kitty").addEventListener("click", () => {
     setTimeout(() => {
       balloon.remove();
     }, 6000);
-  }
+    
+    // After balloons are removed
+setTimeout(() => {
+  document.querySelectorAll(".balloon").forEach(b => b.remove());
+
+  // Show the next button
+  document.getElementById("nextBtn").style.display = "inline-block";
+}, 4000); // 4s = balloon duration
+}
 });
