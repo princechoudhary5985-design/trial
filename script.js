@@ -1,52 +1,33 @@
-const kitty = document.getElementById("kitty");
-const balloonsContainer = document.getElementById("balloons-container");
-const birthdayText = document.getElementById("birthdayText");
-const nextBtn = document.getElementById("nextBtn");
+document.getElementById("kitty").addEventListener("click", () => {
+  // Show birthday message
+  document.getElementById("birthday-message").classList.remove("hidden");
 
-kitty.addEventListener("click", () => {
-  launchBalloons();
-});
-
-function launchBalloons() {
+  // Create balloons
   for (let i = 0; i < 20; i++) {
+    let balloon = document.createElement("div");
+    balloon.classList.add("balloon");
+
+    // Random colors
+    balloon.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+
+    // Random position
+    balloon.style.left = Math.random() * 100 + "vw";
+
+    // Different sizes
+    balloon.style.width = 40 + Math.random() * 40 + "px";
+    balloon.style.height = 60 + Math.random() * 40 + "px";
+
+    // Add balloon
+    document.getElementById("balloons").appendChild(balloon);
+
+    // Remove balloon after animation
     setTimeout(() => {
-      createBalloon();
-    }, i * 300); // balloons appear one by one
+      balloon.remove();
+    }, 6000);
   }
 
-  // Show text & button after balloons animation ends
+  // Show "Next Page" button AFTER balloons disappear
   setTimeout(() => {
-    birthdayText.classList.remove("hidden");
-    nextBtn.classList.remove("hidden");
-  }, 7000);
-}
-
-function createBalloon() {
-  const balloon = document.createElement("div");
-  balloon.classList.add("balloon");
-
-  // random color
-  balloon.style.background = getRandomColor();
-  // random horizontal position
-  balloon.style.left = Math.random() * 100 + "vw";
-  // random size
-  const size = Math.random() * 40 + 30;
-  balloon.style.width = size + "px";
-  balloon.style.height = size * 1.4 + "px";
-
-  balloonsContainer.appendChild(balloon);
-
-  setTimeout(() => {
-    balloon.remove();
-  }, 5000);
-}
-
-function getRandomColor() {
-  const colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink"];
-  return colors[Math.floor(Math.random() * colors.length)];
-}
-
-function goToNext() {
-  window.location.href = "page2.html";
-}
-
+    document.getElementById("next-btn").classList.remove("hidden");
+  }, 6000); // same time as balloon removal
+});
