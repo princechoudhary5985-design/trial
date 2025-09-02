@@ -2,26 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Birthday Surprise</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      text-align: center;
+      background: #ffe4ec;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    #kitty {
+      width: 200px;
+      margin-top: 50px;
+      cursor: pointer;
+    }
+
+    #birthday-message {
+      font-size: 24px;
+      font-weight: bold;
+      color: #d63384;
+      margin-top: 20px;
+      display: none;
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      border-radius: 50%;
+      animation: floatUp 6s linear forwards;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0); }
+      to { transform: translateY(-110vh); opacity: 0; }
+    }
+
+    #next-button {
+      display: none;
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-size: 18px;
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #next-button:hover {
+      background: #e63950;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Kitty image -->
-    <img id="kitty" src="kitty.png" alt="Kitty" class="kitty">
 
-    <!-- Birthday message (hidden at first) -->
-    <h1 id="birthday-message" class="hidden">🎉 Happy Birthday My Love ❤️ 🎉</h1>
+  <img id="kitty" src="https://i.imgur.com/7k3I7rY.png" alt="Kitty">
+  
+  <div id="birthday-message">🎉 Happy Birthday My Love ❤️ 🎉</div>
+  
+  <div id="balloons"></div>
 
-    <!-- Balloons container -->
-    <div id="balloons"></div>
+  <button id="next-button" onclick="goNext()">Next Page ➡️</button>
 
-    <!-- Next Page button (hidden at first) -->
-    <button id="next-button" class="hidden">Go to Next Page ➡️</button>
-  </div>
+  <script>
+    const kitty = document.getElementById("kitty");
+    const message = document.getElementById("birthday-message");
+    const balloonsContainer = document.getElementById("balloons");
+    const nextButton = document.getElementById("next-button");
 
-  <script src="script.js"></script>
+    kitty.addEventListener("click", () => {
+      // Show message
+      message.style.display = "block";
+
+      // Create balloons
+      for (let i = 0; i < 20; i++) {
+        let balloon = document.createElement("div");
+        balloon.classList.add("balloon");
+
+        balloon.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+        balloon.style.left = Math.random() * 100 + "vw";
+        balloon.style.width = 40 + Math.random() * 40 + "px";
+        balloon.style.height = 60 + Math.random() * 40 + "px";
+
+        balloonsContainer.appendChild(balloon);
+
+        setTimeout(() => {
+          balloon.remove();
+        }, 6000);
+      }
+
+      // Show button after 3 seconds
+      setTimeout(() => {
+        nextButton.style.display = "inline-block";
+      }, 3000);
+    });
+
+    function goNext() {
+      window.location.href = "page2.html"; // change to your next page file
+    }
+  </script>
+
 </body>
 </html>
-
