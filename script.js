@@ -32,5 +32,9 @@ setTimeout(() => {
   // Show the next button
   document.getElementById("nextBtn").style.display = "inline-block";
 }, 4000); // 4s = balloon duration
+    const nextBtn = document.getElementById("nextBtn");
+nextBtn.style.display = "inline-block";
+setTimeout(() => nextBtn.classList.add("show"), 50);
+
 }
 });
