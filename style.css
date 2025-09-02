@@ -57,3 +57,20 @@ body {
   0% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(-110vh); opacity: 0; }
 }
+.next-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #ff6f91;
+  color: white;
+  font-size: 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.next-btn:hover {
+  background: #ff4f70;
+  transform: scale(1.1);
+}
