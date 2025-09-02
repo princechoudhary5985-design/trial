@@ -1,28 +1,19 @@
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-  text-align: center;
-  overflow: hidden;
-}
-
-.welcome-container {
-  padding: 20px;
+  background: pink;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
 }
 
 .kitty {
   width: 200px;
-  margin-top: 20px;
   cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.kitty:hover {
-  transform: scale(1.1);
+  margin-bottom: 20px;
 }
 
 .hidden {
@@ -30,30 +21,45 @@ body {
 }
 
 #birthday-message {
-  margin-top: 30px;
   font-size: 2rem;
-  color: #e63946;
-  animation: pop 1s ease-in-out;
+  color: red;
+  margin: 20px 0;
 }
 
-@keyframes pop {
-  0% { transform: scale(0); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+#balloons {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-/* Balloons */
 .balloon {
   position: absolute;
-  bottom: -150px;
-  width: 60px;
-  height: 80px;
+  bottom: -100px;
   border-radius: 50%;
-  background: red;
-  opacity: 0.8;
-  animation: floatUp 6s ease-in forwards;
+  animation: floatUp 6s linear forwards;
 }
 
 @keyframes floatUp {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-110vh); opacity: 0; }
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+#next-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  background: red;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
 }
