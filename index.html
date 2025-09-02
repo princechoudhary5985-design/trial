@@ -3,28 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome 💖</title>
+  <title>Birthday Surprise</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="welcome-container">
-    <h1>Hey Love ❤️</h1>
-    <p>Click the kitty to see something special!</p>
-    
-    <!-- Kitty Image -->
-    <img src="https://media.tenor.com/Y0D4Zb_hED0AAAAC/hello-kitty-dancing.gif" alt="Kitty" class="kitty" id="kitty">
+  <div class="container">
+    <!-- Kitty image -->
+    <img id="kitty" src="kitty.png" alt="Kitty" class="kitty">
 
-    <!-- Hidden Birthday Message -->
-    <h2 id="birthday-message" class="hidden">🎉 Happy Birthday My Love 🎂❤️</h2>
+    <!-- Birthday message (hidden at first) -->
+    <h1 id="birthday-message" class="hidden">🎉 Happy Birthday My Love ❤️ 🎉</h1>
 
-    <!-- Balloon container -->
+    <!-- Balloons container -->
     <div id="balloons"></div>
-  </div>
-   <button id="nextButton" class="hidden" onclick="goToPage2()">Next ➡️</button>
-  </div>
-  <canvas id="balloonCanvas"></canvas>
 
+    <!-- Next Page button (hidden at first) -->
+    <button id="next-button" class="hidden">Go to Next Page ➡️</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
