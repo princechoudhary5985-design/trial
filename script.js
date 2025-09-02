@@ -23,5 +23,8 @@ kitty.addEventListener("click", () => {
 function getRandomColor() {
   const colors = ["#ff6f91", "#ff9671", "#ffc75f", "#f9f871", "#6ecb63"];
   return colors[Math.floor(Math.random() * colors.length)];
+  document.getElementById('nextButton').addEventListener('click', () => {
+  alert("Next page will open here!");
+});
 }
 
