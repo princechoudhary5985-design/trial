@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kitty Page → Balloons → Next</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday 🎉</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrap">
-    <img id="kitty" src="kitty.png" alt="Kitty" />
-    <a id="nextBtn" class="btn" href="page2.html">Go to Next Surprise 💌</a>
+  <div class="container">
+    <img src="kitty.png" alt="Kitty" class="kitty" id="kitty">
+    <h2 id="message" class="hidden">🎂 Happy Birthday, Diya! 🎉</h2>
+    <a href="page2.html" id="nextBtn" class="hidden">Next Page →</a>
   </div>
-  <div id="balloonLayer"></div>
-  <script src="script.js" defer></script>
+
+  <div id="balloons-container"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
 
